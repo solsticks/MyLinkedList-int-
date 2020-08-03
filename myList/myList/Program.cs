@@ -6,7 +6,13 @@ namespace myList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var myList = new myLinkedList();
+            myList.addStart(23);
+            myList.addStart(12);
+            myList.addEnd(52);
+            myList.AddSorted(11);
+
+            myList.Print();
         }
     }
 }

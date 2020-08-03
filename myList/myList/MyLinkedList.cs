@@ -42,6 +42,22 @@ namespace myList
             }
         }
 
+        public void AddSorted(int data)
+        {
+            if (headNode == null)
+            {
+                headNode = new Node(data);
+            }
+            else if (data < headNode.data)
+            {
+                addStart(data);
+            }
+            else
+            {
+                headNode.addSorted(data);
+            }
+        }
+
         public void Print()
         {
             if (headNode != null)
