@@ -7,12 +7,19 @@ namespace myList
         static void Main(string[] args)
         {
             var myList = new myLinkedList();
-            myList.addStart(23);
-            myList.addStart(12);
-            myList.addEnd(52);
-            myList.AddSorted(11);
+            myList.addEnd(12);
+            myList.addStart(11);
+            
 
+            
+
+            Console.WriteLine(myList.Count); 
             myList.Print();
+
+            //var test = new Node(23);
+            //test.addToEnd(24);
+            //test.Remove();
+            //test.Print();
         }
     }
 }

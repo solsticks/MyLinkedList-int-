@@ -7,11 +7,14 @@ namespace myList
     class myLinkedList
     {
         public Node headNode;
+        public Node Tail;
+        public int Count;
 
 
         public myLinkedList()
         {
             headNode = null;
+            Count = 0;
 
         }
 
@@ -25,37 +28,66 @@ namespace myList
             {
                 headNode.addToEnd(data);
             }
+            Count++;
         }
 
         public void addStart(int data)
-        {
+        {            
             if (headNode == null)
             {
-                headNode = new Node(data);
+                headNode = new Node(data);                
             }
             else
             {
                 Node temp = new Node(data);
                 temp.Next = headNode;
-                headNode = temp;
+                headNode = temp;                
+            }
+            Count++;
+            return;
+        }
+
+        //public void AddSorted(int data)
+        //{
+        //    if (headNode == null)
+        //    {
+        //        headNode = new Node(data);
+        //    }
+        //    else if (data < headNode.data)
+        //    {
+        //        addStart(data);
+        //    }
+        //    else
+        //    {
+        //        headNode.addSorted(data);
+        //    }
+        //    Count++;
+        //}
+
+        public void Remove()
+        {
+            if (headNode != null)
+            {
 
             }
         }
 
-        public void AddSorted(int data)
+        public void Pop()
         {
-            if (headNode == null)
+            var current = headNode;
+            var prev = current;
+            if (current == null)
             {
-                headNode = new Node(data);
+                Console.WriteLine("The list is empty");                
             }
-            else if (data < headNode.data)
+            while (current.Next != null)
             {
-                addStart(data);
+                prev = current;
+                current = current.Next;              
             }
-            else
-            {
-                headNode.addSorted(data);
-            }
+            Tail = prev;
+            Tail.Next = null;
+            Count--;            
         }
 
         public void Print()
